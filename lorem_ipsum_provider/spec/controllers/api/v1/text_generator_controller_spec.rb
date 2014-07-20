@@ -27,11 +27,14 @@ describe Api::V1::TextGeneratorController do
   end
 
   describe "failure" do
-    before do
+    it "fails without a paragraph or template param" do
       get :filler
-    end
-    it "fails without a paragraph param" do
       expect(response).to be_bad_request
+    end
+
+    it "fails when a template is not found" do
+      get :filler, template: "does not exist"
+      expect(response).to be_not_found
     end
   end
 end

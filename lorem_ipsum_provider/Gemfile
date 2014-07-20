@@ -9,6 +9,7 @@ gem "versionist"
 gem 'pry'
 gem 'pry-rails'
 gem 'powder'
+gem 'lorem_ipsum_amet'
 
 group :test do
   gem "rspec-rails"

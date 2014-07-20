@@ -1,11 +1,13 @@
 require "spec_helper"
 
 describe Api::V1::TextGeneratorController do
-  before do
-    get :filler
-  end
+  describe "success" do
+    before do
+      get :filler, paragraphs: 5
+    end
 
-  it "returns the appropriate response" do
-    expect(response.body).to eq("Lorem Ipsum ya dingus")
+    it "returns the appropriate response" do
+      expect(response.body).to eq(LoremIpsum.lorem_ipsum(paragraphs: 5))
+    end
   end
 end

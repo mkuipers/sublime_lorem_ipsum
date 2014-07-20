@@ -1,4 +1,5 @@
 class Api::V1::TextGeneratorController < ApplicationController
+  include Concerns::ControllerErrorHandling
   respond_to :json
 
   def filler

@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem "versionist"
 gem 'pry'
 gem 'pry-rails'
+gem 'powder'
 
 group :test do
   gem "rspec-rails"

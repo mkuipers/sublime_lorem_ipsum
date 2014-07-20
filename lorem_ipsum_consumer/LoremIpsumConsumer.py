@@ -6,7 +6,8 @@ import threading
 class LoremIpsumCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     try:
-      request = urllib2.Request('http://lorem-ipsum-provider.dev/filler.json')
+      data = urllib.urlencode({'paragraphs': 5})
+      request = urllib2.Request('http://lorem-ipsum-provider.dev/filler.json?' + data)
       http_file = urllib2.urlopen(request, timeout=10)
       self.view.insert(edit, 0, http_file.read())
       return

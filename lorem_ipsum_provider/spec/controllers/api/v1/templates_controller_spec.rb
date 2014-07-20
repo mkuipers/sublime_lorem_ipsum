@@ -23,5 +23,19 @@ describe Api::V1::TemplatesController do
         expect(assigns(:template).name).to eq(template_params[:name])
       end
     end
+
+    describe "failure" do
+      #TODO: validations
+      let(:fail_create) { Proc.new { post :create, format: :json } }
+      it "returns a bad_request" do
+        fail_create.call
+        expect(response).to be_bad_request
+      end
+
+      it "does not increase the number of templates" do
+        expect(fail_create).to change { Template.count }.by(0)
+      end
+    end
   end
+
 end

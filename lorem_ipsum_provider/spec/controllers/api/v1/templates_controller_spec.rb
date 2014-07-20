@@ -37,5 +37,4 @@ describe Api::V1::TemplatesController do
       end
     end
   end
-
 end

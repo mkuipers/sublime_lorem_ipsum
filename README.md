@@ -17,3 +17,9 @@ Get [pow](http://pow.cx).
 `bundle install`
 
 `powder link`
+
+## TODO
+* Consumer: add threading
+* Consumer: refactor atrocious python
+* Provider: a more rich interface for managing templates
+* Provider: integration with [bacon ipsum](http://baconipsum.com/) API

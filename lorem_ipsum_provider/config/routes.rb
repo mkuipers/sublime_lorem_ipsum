@@ -3,7 +3,8 @@ LoremIpsumProvider::Application.routes.draw do
 
     api_version(module: "v1", header: {name: "API-VERSION", value: '1'}, default: true) do
       match '/filler(.:format)' => 'text_generator#filler', via: :get
-    end
 
+      resources :templates, :only => [:create]
+    end
   end
 end

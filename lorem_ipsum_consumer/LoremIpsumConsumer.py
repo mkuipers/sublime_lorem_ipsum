@@ -2,7 +2,8 @@ import sublime, sublime_plugin
 import urllib
 import urllib2
 
-
+# Some of this may be copied directly from
+# http://code.tutsplus.com/tutorials/how-to-create-a-sublime-text-2-plugin--net-22685
 
 class PromptLoremIpsumCommand(sublime_plugin.WindowCommand):
   def run(self):
